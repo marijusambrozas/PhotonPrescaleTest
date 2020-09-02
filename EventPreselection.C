@@ -251,9 +251,9 @@ void EventPreselection (TString type = "SinglePhoton_B", Bool_t selection = kTRU
                         {
                             if(ntuple->Electron_pT[j] > 25 && fabs(ntuple->Electron_etaSC[j]) < 2.4 && ntuple->Electron_mHits[j] <= 1 &&
                                !(fabs(ntuple->Electron_etaSC[j]) >= 1.4442 && fabs(ntuple->Electron_etaSC[j]) <= 1.566) &&
-                               ( (ntuple->Electron_etaSC[j] < 1.4442 && ntuple->Electron_Full5x5_SigmaIEtaIEta[j] < 0.013 &&
+                               ( (fabs(ntuple->Electron_etaSC[j]) < 1.4442 && ntuple->Electron_Full5x5_SigmaIEtaIEta[j] < 0.013 &&
                                   ntuple->Electron_HoverE[j] < 0.13 && ntuple->Electron_dEtaInSeed[j] < 0.01 && ntuple->Electron_dPhiIn[j] < 0.07) ||
-                                 (ntuple->Electron_etaSC[j] > 1.566 && ntuple->Electron_Full5x5_SigmaIEtaIEta[j] < 0.035 &&
+                                 (fabs(ntuple->Electron_etaSC[j] > 1.566) && ntuple->Electron_Full5x5_SigmaIEtaIEta[j] < 0.035 &&
                                   ntuple->Electron_HoverE[j] < 0.13) ) ) // very relaxed preselection
                             {
                                 Bool_t pass = kFALSE;
