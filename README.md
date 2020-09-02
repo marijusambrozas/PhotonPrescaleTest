@@ -17,7 +17,7 @@ Files `SelectedForFR_E_SinglePhoton_X.root` will be created.
 You can run the prescale demo script on the preselected events with PrescaleDemo.C:
 ```
 root -l
-.x PrescaleDemo.C+
+.x PrescaleDemo.C+("*TYPE*")
 ```
-It will draw a combined HLT object p_T historgram of all runs but it will also save separate root files `FR_Hist_TEST_E_SinglePhoton_X.root` with histograms for each run.
+It will draw a combined HLT object p_T histogram of all runs selected in `*TYPE*` but it will also save separate root files `FR_Hist_TEST_E_SinglePhoton_X.root` with histograms for each run.
 You can check those with root TBrowser.
